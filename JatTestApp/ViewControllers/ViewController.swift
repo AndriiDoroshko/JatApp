@@ -16,10 +16,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.placeholder = "User email"
-        passwordTextField.placeholder = "Password"
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
+        setupStyle()
+        setupObserving()
     }
 
     @IBAction func logInPressed(_ sender: Any) {
@@ -39,48 +37,49 @@ class ViewController: UIViewController {
         }
     }
     
-    func isValidEmail(testStr:String?) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    func setupStyle() {
+        usernameTextField.placeholder = "User email"
+        passwordTextField.placeholder = "Password"
         
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: testStr)
+        logInButton.isEnabled = false
+        logInButton.setTitle("Login is Disabled", for: .disabled)
+        passwordTextField.isSecureTextEntry = true
+    }
+    
+    func setupObserving() {
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    // MARK: UITapGestureRecognizer
+    @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
+        view.endEditing(true)
     }
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let restId = textField.restorationIdentifier else { return }
-        switch restId {
-        case "Email":
-            if isValidEmail(testStr: textField.text) && !(passwordTextField.text?.isEmpty)! {
-                logInButton.isEnabled = true
-            } else {
-                logInButton.isEnabled = false
-            }
-        case "Password":
-                logInButton.isEnabled = false
-        default:
-            return
+        if (usernameTextField.text?.asEmail() != nil) && (passwordTextField.text?.asPassword() != nil) {
+            logInButton.isEnabled = true
+            logInButton.setTitle("Log In", for: .normal)
+        } else {
+            logInButton.isEnabled = false
+            logInButton.setTitle("Login is Disabled", for: .disabled)
         }
     }
-//    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        guard let restId = textField.restorationIdentifier else { return false }
-//        switch restId {
-//        case "email":
-//            return true
-//        case "password":
-//            let strippedString = "*"
-//            
-//            if let replaceStart = textField.position(from: textField.beginningOfDocument, offset: range.location),
-//                let replaceEnd = textField.position(from: replaceStart, offset: range.length),
-//                let textRange = textField.textRange(from: replaceStart, to: replaceEnd) {
-//                
-//                textField.replace(textRange, withText: strippedString)
-//            }
-//        default:
-//            return false
-//        }
-//        return false
-//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        let nextResponder = textField.superview?.viewWithTag(nextTag)
+        
+        if nextResponder != nil {
+            nextResponder?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }

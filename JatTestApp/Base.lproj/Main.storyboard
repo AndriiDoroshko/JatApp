@@ -39,6 +39,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="validator:" destination="BYZ-38-t0r" eventType="editingChanged" id="L0k-Xj-xt4"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipT-Nm-hTv">
                                 <rect key="frame" x="74" y="323" width="228" height="30"/>
@@ -52,6 +55,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="validator:" destination="BYZ-38-t0r" eventType="editingChanged" id="u42-Y5-N1n"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-CH-xC7">
                                 <rect key="frame" x="74" y="363" width="228" height="30"/>
@@ -67,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oko-p8-op5">
-                                <rect key="frame" x="146" y="99" width="83" height="21"/>
+                                <rect key="frame" x="146" y="100" width="83" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -77,9 +83,9 @@
                         <constraints>
                             <constraint firstItem="8gN-CH-xC7" firstAttribute="leading" secondItem="szm-qs-cvd" secondAttribute="leading" id="90s-oH-6uT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pFe-rg-Wob" secondAttribute="trailing" constant="73" id="AeU-tG-5c2"/>
+                            <constraint firstItem="oko-p8-op5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="Hy0-wN-nmS"/>
                             <constraint firstItem="ipT-Nm-hTv" firstAttribute="top" secondItem="szm-qs-cvd" secondAttribute="bottom" constant="30" id="I9G-Xf-CDG"/>
                             <constraint firstItem="8gN-CH-xC7" firstAttribute="top" secondItem="ipT-Nm-hTv" secondAttribute="bottom" constant="10" id="LRy-Li-Mjf"/>
-                            <constraint firstItem="pFe-rg-Wob" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="MDv-El-YuB"/>
                             <constraint firstItem="ipT-Nm-hTv" firstAttribute="leading" secondItem="szm-qs-cvd" secondAttribute="leading" id="SfA-fE-Res"/>
                             <constraint firstItem="ipT-Nm-hTv" firstAttribute="trailing" secondItem="szm-qs-cvd" secondAttribute="trailing" id="Ut2-lX-puw"/>
                             <constraint firstItem="szm-qs-cvd" firstAttribute="top" secondItem="pFe-rg-Wob" secondAttribute="bottom" constant="31" id="Xl4-HS-pwM"/>

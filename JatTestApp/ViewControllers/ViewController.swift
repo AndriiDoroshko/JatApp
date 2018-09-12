@@ -58,10 +58,8 @@ class ViewController: UIViewController {
     @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
         view.endEditing(true)
     }
-}
-
-extension ViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    
+    @IBAction func validator(_ sender: UITextField) {
         if (usernameTextField.text?.asEmail() != nil) && (passwordTextField.text?.asPassword() != nil) {
             logInButton.isEnabled = true
             logInButton.setTitle("Log In", for: .normal)
@@ -70,7 +68,9 @@ extension ViewController: UITextFieldDelegate {
             logInButton.setTitle("Login is Disabled", for: .disabled)
         }
     }
-    
+}
+
+extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
         let nextResponder = textField.superview?.viewWithTag(nextTag)

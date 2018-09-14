@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063798A221495A0900233806 /* String+Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063798A121495A0900233806 /* String+Password.swift */; };
+		066AF77B21494317004B2362 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AF77A21494317004B2362 /* String+Email.swift */; };
 		4224DF0F213FC24B003CA464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224DF0E213FC24B003CA464 /* AppDelegate.swift */; };
 		4224DF11213FC24B003CA464 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4224DF10213FC24B003CA464 /* ViewController.swift */; };
 		4224DF14213FC24B003CA464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4224DF12213FC24B003CA464 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		063798A121495A0900233806 /* String+Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Password.swift"; sourceTree = "<group>"; };
+		066AF77A21494317004B2362 /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		4224DF0B213FC24B003CA464 /* JatTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JatTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4224DF0E213FC24B003CA464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4224DF10213FC24B003CA464 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		066AF77921494302004B2362 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				066AF77A21494317004B2362 /* String+Email.swift */,
+				063798A121495A0900233806 /* String+Password.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4224DF02213FC24B003CA464 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +113,7 @@
 		422B5787214163FE00A7A15C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				066AF77921494302004B2362 /* Extensions */,
 				4224DF10213FC24B003CA464 /* ViewController.swift */,
 				422B57842141621C00A7A15C /* ResultViewController.swift */,
 				426BF8AE213FFD6500A1BB54 /* SingUpViewController.swift */,
@@ -198,7 +212,9 @@
 				426BF8AF213FFD6500A1BB54 /* SingUpViewController.swift in Sources */,
 				42B3038E2146FD4F00B95E24 /* Locales.swift in Sources */,
 				42B3038A2146D0FA00B95E24 /* TextModel.swift in Sources */,
+				063798A221495A0900233806 /* String+Password.swift in Sources */,
 				423A095921415FA7009B41C4 /* ApiService.swift in Sources */,
+				066AF77B21494317004B2362 /* String+Email.swift in Sources */,
 				4224DF0F213FC24B003CA464 /* AppDelegate.swift in Sources */,
 				422B57852141621C00A7A15C /* ResultViewController.swift in Sources */,
 			);
@@ -345,8 +361,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9W59Z6Q963;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JatTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,8 +380,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9W59Z6Q963;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JatTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
